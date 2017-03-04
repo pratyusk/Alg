@@ -7,17 +7,9 @@ using namespace std;
 
 void URLify(string &x, int n) {
     int count = 0;
-    for (unsigned int i = x.length() - 1; i >= 0; i--) {
-        if (x[i] == ' ') x.erase(x.begin() + i);
-        else break;
-    }
-    if (x.length() == 0) {
-        x = "%20";
-        return;
-    }
     vector<int> ind;
     int spaceCount = 0;
-    for (unsigned int i = 0; i < x.length(); i++) {
+    for (unsigned int i = 0; i < n; i++) {
         if (x[i] == ' ') {
             ind.push_back(i);
             spaceCount++;
